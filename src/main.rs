@@ -1,9 +1,10 @@
 use std::io;
 use std::io::Write;
 
-static WORDS_FILE: &'static str = include_str!("words.list");
-
 fn main() {
+    // Add dictionary of words
+    let all_words = include_str!("words.list");
+
     // Gather letters as input
     let mut letters = String::new();
     print!("All letters: ");
@@ -27,7 +28,7 @@ fn main() {
 
     // Match words
     let mut matched_words = Vec::new();
-    for word in WORDS_FILE.lines() {
+    for word in all_words.lines() {
         let mut word_matches = true;
 
         // Words must be longer than three characters
