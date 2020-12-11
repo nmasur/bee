@@ -27,7 +27,7 @@ cargo build --release
 
 Run `bee`.
 
-First, input all of the letters in the puzzle, including the required letter.
+First, input all of the letters in the puzzle, with or without the required letter.
 
 ```
 Letters: abcdefg

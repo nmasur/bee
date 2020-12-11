@@ -6,26 +6,42 @@ fn main() {
     let all_words = include_str!("words.list");
 
     // Gather letters as input
+    let letters = read_letters("All letters");
+    let required_letters = read_letters("Required letters");
+
+    // Make sure required letters are in all letters and deduplicate
+    let letters = combine_letters(letters, &required_letters);
+
+    eprintln!(
+        "Letters are: {} (must contain {})",
+        letters, required_letters,
+    );
+
+    match_words(all_words, letters, required_letters);
+}
+
+fn read_letters(message: &str) -> String {
     let mut letters = String::new();
-    eprint!("All letters: ");
+    eprint!("{}: ", message);
     io::stdout().flush().unwrap();
     io::stdin()
         .read_line(&mut letters)
         .expect("Failed to read line");
+    let letters = letters.trim();
+    let mut letters: Vec<char> = letters.chars().collect();
+    letters.dedup();
+    letters.into_iter().collect()
+}
 
-    let mut required_letters = String::new();
-    eprint!("Required letters: ");
-    io::stdout().flush().unwrap();
-    io::stdin()
-        .read_line(&mut required_letters)
-        .expect("Failed to read line");
+fn combine_letters(letters: String, required_letters: &String) -> String {
+    let mut combined_letters = format!("{}{}", letters, required_letters)
+        .chars()
+        .collect::<Vec<char>>();
+    combined_letters.dedup();
+    combined_letters.into_iter().collect()
+}
 
-    eprintln!(
-        "Letters are: {} (must contain {})",
-        letters.trim(),
-        required_letters.trim()
-    );
-
+fn match_words(all_words: &str, letters: String, required_letters: String) {
     // Match words
     let mut matched_words = Vec::new();
     for word in all_words.lines() {
