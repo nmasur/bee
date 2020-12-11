@@ -17,7 +17,14 @@ fn main() {
         letters, required_letters,
     );
 
-    match_words(all_words, letters, required_letters);
+    // Find matching words
+    let matched_words = match_words(all_words, letters, required_letters);
+
+    // Output results
+    eprintln!("Found {} matching words!", matched_words.len());
+    for word in matched_words {
+        println!("{}", word);
+    }
 }
 
 fn read_letters(message: &str) -> String {
@@ -41,7 +48,7 @@ fn combine_letters(letters: String, required_letters: &str) -> String {
     combined_letters.into_iter().collect()
 }
 
-fn match_words(all_words: &str, letters: String, required_letters: String) {
+fn match_words(all_words: &str, letters: String, required_letters: String) -> Vec<&str> {
     // Match words
     let mut matched_words = Vec::new();
     for word in all_words.lines() {
@@ -76,10 +83,5 @@ fn match_words(all_words: &str, letters: String, required_letters: String) {
             matched_words.push(word);
         }
     }
-
-    eprintln!("Found {} matching words!", matched_words.len());
-
-    for word in matched_words {
-        println!("{}", word);
-    }
+    matched_words
 }

@@ -1,8 +1,8 @@
 # Bee
 
-Simple program to solve the [NYTimes Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) using a dictionary of every English word, taken from [here](https://raw.githubusercontent.com/elasticdog/yawl/master/yawl-0.3.2.03/word.list).
+Simple program to help solve the [NYTimes Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) using a dictionary of every English word, taken from [YAWL](https://raw.githubusercontent.com/elasticdog/yawl/master/yawl-0.3.2.03/word.list).
 
-This is a really rough solution, so the output will not necessarily contain the same word list that NYT uses. Some of their words may not be in this list, and many in this list will not count. If you want the actual answers, it should be pretty easy to look them up. This is just a fun experiment.
+This is a rough solution, so the output will inevitably differ from NYT's word list. Some of their words may not be in this program, and **many** words in this program will not count in the game. If you want the actual answers, it should be pretty easy to look them up. This is just a fun experiment.
 
 ## Installation
 
@@ -42,9 +42,9 @@ Required letters: a
 The program will output the full list of possible words.
 
 
-## Rules
+## Game Rules
 
 1. Each word must be more than 4 characters long.
 2. You can only use the letters in the puzzle, but they can be used as many times as you want.
 3. The required letter (center letter) must be used at least once.
-4. Every puzzle contains at least one "pangram," in which every letter is used at least once.
+4. Every NYT puzzle contains at least one "pangram," in which every letter is used at least once.
