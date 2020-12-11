@@ -33,7 +33,7 @@ fn read_letters(message: &str) -> String {
     letters.into_iter().collect()
 }
 
-fn combine_letters(letters: String, required_letters: &String) -> String {
+fn combine_letters(letters: String, required_letters: &str) -> String {
     let mut combined_letters = format!("{}{}", letters, required_letters)
         .chars()
         .collect::<Vec<char>>();
