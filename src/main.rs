@@ -7,20 +7,20 @@ fn main() {
 
     // Gather letters as input
     let mut letters = String::new();
-    print!("All letters: ");
+    eprint!("All letters: ");
     io::stdout().flush().unwrap();
     io::stdin()
         .read_line(&mut letters)
         .expect("Failed to read line");
 
     let mut required_letters = String::new();
-    print!("Required letters: ");
+    eprint!("Required letters: ");
     io::stdout().flush().unwrap();
     io::stdin()
         .read_line(&mut required_letters)
         .expect("Failed to read line");
 
-    println!(
+    eprintln!(
         "Letters are: {} (must contain {})",
         letters.trim(),
         required_letters.trim()
@@ -61,7 +61,7 @@ fn main() {
         }
     }
 
-    println!("Found {} matching words!", matched_words.len());
+    eprintln!("Found {} matching words!", matched_words.len());
 
     for word in matched_words {
         println!("{}", word);
