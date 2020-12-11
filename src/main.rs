@@ -54,6 +54,7 @@ fn main() {
             }
         }
 
+        // Add successful match to list
         if word_matches {
             matched_words.push(word);
         }
