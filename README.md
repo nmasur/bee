@@ -1,4 +1,4 @@
-# Bee
+# Bee 🐝
 
 Simple program to help solve the [NYTimes Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) using a dictionary of every English word, taken from [YAWL](https://raw.githubusercontent.com/elasticdog/yawl/master/yawl-0.3.2.03/word.list).
 
@@ -8,7 +8,7 @@ This is a rough solution, so the output will inevitably differ from NYT's word l
 
 See [releases](https://github.com/nmasur/bee/releases) page for binaries.
 
-On MacOS, you can also install from Homebrew:
+On macOS, you can also install from Homebrew:
 
 ```
 brew tap nmasur/repo
